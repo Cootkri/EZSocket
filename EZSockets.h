@@ -14,8 +14,8 @@ enum Packet{
 };
 
 void InitWSA();
-HANDLE SetCallback(void(*f));
-HANDLE SetCallback(void(*f)(int), int param);
+HANDLE MakeThread(void(*f));
+HANDLE MakeThread(void(*f)(int), int param);
 
 void MergeInts(char* dest, Packet pack, int value);
 void DivergeInts(char* src, Packet *pack, int *value);
