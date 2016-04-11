@@ -1,10 +1,10 @@
 #include "EZSockets.h"
 
-HANDLE SetCallback(void(*f)){
+HANDLE MakeThread(void(*f)){
 	return CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)f, NULL, NULL, NULL);
 }
 
-HANDLE SetCallback(void(*f)(int), int param){
+HANDLE MakeThread(void(*f)(int), int param){
 	return CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)f, (LPVOID)(param), NULL, NULL);
 }
 
